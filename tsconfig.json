@@ -12,7 +12,8 @@
     "esModuleInterop": true,
     // Support for default imports (without "import * as" syntax)
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "ts-node": {
     "compilerOptions": {
