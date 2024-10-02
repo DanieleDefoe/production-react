@@ -2,18 +2,16 @@ import {
   type FC,
   type PropsWithChildren,
   useCallback,
-  useContext,
   useMemo,
   useState,
 } from 'react';
 import {
   getInitialTheme,
   type IThemeContext,
-  LOCAL_STORAGE_THEME_KEY,
   saveTheme,
   Theme,
   ThemeContext,
-} from './ThemeContext';
+} from '@/shared/config';
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const [theme, setTheme] = useState(getInitialTheme);

@@ -13,7 +13,10 @@
     // Support for default imports (without "import * as" syntax)
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {

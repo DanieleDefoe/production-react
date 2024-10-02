@@ -5,8 +5,8 @@ import {
   Routes,
 } from 'react-router-dom';
 import App from '../App';
-import { MainPage } from '../pages/MainPage/MainPage.lazy';
-import { AboutPage } from '../pages/AboutPage/AboutPage.lazy';
+import { MainPage } from '@/pages/MainPage';
+import { AboutPage } from '@/pages/AboutPage';
 
 const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>

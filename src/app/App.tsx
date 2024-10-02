@@ -1,7 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
 import './styles/index.scss';
-import { useTheme } from './theme/useTheme';
 import clsx from 'clsx';
+import { useTheme } from '@/shared/config';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
