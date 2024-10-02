@@ -1,12 +1,13 @@
 import { Link, Outlet } from 'react-router-dom';
 import './styles/index.scss';
 import { useTheme } from './theme/useTheme';
+import clsx from 'clsx';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={clsx('app', theme)}>
       <button onClick={toggleTheme}>Toggle theme</button>
       <h1>Hello</h1>
       <div>
