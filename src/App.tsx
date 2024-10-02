@@ -1,9 +1,13 @@
 import { Link, Outlet } from 'react-router-dom';
-import './index.scss';
+import './styles/index.scss';
+import { useTheme } from './theme/useTheme';
 
 const App = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <div className="app">
+    <div className={`app ${theme}`}>
+      <button onClick={toggleTheme}>Toggle theme</button>
       <h1>Hello</h1>
       <div>
         <Link to="/">Main</Link>
