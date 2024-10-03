@@ -2,18 +2,14 @@ import { Link, Outlet } from 'react-router-dom';
 import './styles/index.scss';
 import clsx from 'clsx';
 import { useTheme } from '@/shared/config';
+import { Navbar } from '@/widgets/Navbar';
 
 const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={clsx('app', theme)}>
-      <button onClick={toggleTheme}>Toggle theme</button>
-      <h1>Hello</h1>
-      <div>
-        <Link to="/">Main</Link>
-        <Link to="/about">About</Link>
-      </div>
+      <Navbar />
       <div>
         <Outlet />
       </div>
