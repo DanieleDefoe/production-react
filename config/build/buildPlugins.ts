@@ -24,6 +24,6 @@ export const buildPlugins = ({
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    isDev && new ReactRefreshWebpackPlugin(),
-  ].filter(Boolean);
+    new ReactRefreshWebpackPlugin(),
+  ];
 };

@@ -8,6 +8,7 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "Node",
+    "strictNullChecks": true,
     // for packages that don't have ES modules (common js)
     "esModuleInterop": true,
     // Support for default imports (without "import * as" syntax)
@@ -22,5 +23,5 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
 }

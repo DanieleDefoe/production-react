@@ -1,10 +1,7 @@
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import clsx from 'clsx';
 import classes from './Button.module.scss';
-
-export enum ButtonTheme {
-  CLEAR = 'clear',
-}
+import { ButtonTheme } from './lib/types';
 
 interface ButtonProps extends ComponentProps<'button'>, PropsWithChildren {
   className?: string;
@@ -14,7 +11,7 @@ interface ButtonProps extends ComponentProps<'button'>, PropsWithChildren {
 export const Button: FC<ButtonProps> = ({
   className,
   children,
-  theme,
+  theme = ButtonTheme.CLEAR,
   ...props
 }) => {
   return (

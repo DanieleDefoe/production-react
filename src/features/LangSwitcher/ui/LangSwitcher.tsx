@@ -6,7 +6,7 @@ export const LangSwitcher = () => {
 
   const onTranslate = () => {
     const newLang = i18n.language === 'ru' ? 'en' : 'ru';
-    i18n.changeLanguage(newLang);
+    void i18n.changeLanguage(newLang);
   };
 
   return (

@@ -2,11 +2,7 @@ import { type FC } from 'react';
 import clsx from 'clsx';
 import classes from './AppLink.module.scss';
 import { Link, type LinkProps } from 'react-router-dom';
-
-export enum AppLinkTheme {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-}
+import { AppLinkTheme } from './lib/types';
 
 interface AppLinkProps extends LinkProps {
   theme?: AppLinkTheme;

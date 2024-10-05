@@ -2,10 +2,11 @@
   "name": "ulbi-course",
   "version": "1.0.0",
   "description": "Advanced React Course",
-  "main": "index.js",
   "scripts": {
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
+    "lint:ts": "eslint .",
+    "lint:ts:fix": "eslint . --fix",
     "start": "webpack serve --env port=3000"
   },
   "keywords": [
