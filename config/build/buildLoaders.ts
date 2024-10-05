@@ -4,6 +4,17 @@ import ReactRefreshTypeScript from 'react-refresh-typescript';
 import type { BuildOptions } from './types/config';
 
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)?$/i,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+      },
+    },
+  } satisfies RuleSetRule;
+
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: [
@@ -56,5 +67,5 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     ],
   } satisfies RuleSetRule;
 
-  return [typescriptLoader, cssLoader, svgLoader, fileLoader];
+  return [babelLoader, typescriptLoader, cssLoader, svgLoader, fileLoader];
 };
