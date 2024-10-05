@@ -3,6 +3,7 @@ import { StrictMode } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { router } from '@/app/router';
 import { ThemeProvider } from '@/shared/providers';
+import '@/shared/config/i18n/i18n';
 
 const rootNode = document.getElementById('root');
 

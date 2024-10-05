@@ -1,12 +1,4 @@
-import {
-  createContext,
-  FC,
-  PropsWithChildren,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from 'react';
+import { createContext } from 'react';
 
 export enum Theme {
   LIGHT = 'light',

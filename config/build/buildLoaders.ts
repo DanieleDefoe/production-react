@@ -1,11 +1,22 @@
 import { type RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ReactRefreshTypeScript from 'react-refresh-typescript';
 import type { BuildOptions } from './types/config';
 
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
   const typescriptLoader = {
     test: /\.tsx?$/,
-    use: 'ts-loader',
+    use: [
+      {
+        loader: 'ts-loader',
+        options: {
+          getCustomTransformers: () => ({
+            before: [options.isDev && ReactRefreshTypeScript()].filter(Boolean),
+          }),
+          transpileOnly: options.isDev,
+        },
+      },
+    ],
     exclude: /node_modules/,
   } satisfies RuleSetRule;
 
