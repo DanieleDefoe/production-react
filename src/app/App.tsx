@@ -3,6 +3,7 @@ import './styles/index.scss';
 import clsx from 'clsx';
 import { useTheme } from '@/shared/hooks';
 import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
 
 const App = () => {
   const { theme } = useTheme();
@@ -10,9 +11,12 @@ const App = () => {
   return (
     <div className={clsx('app', theme)}>
       <Navbar />
-      <div>
-        <Outlet />
-      </div>
+      <main className="content-page">
+        <Sidebar />
+        <div className="page-wrapper">
+          <Outlet />
+        </div>
+      </main>
     </div>
   );
 };

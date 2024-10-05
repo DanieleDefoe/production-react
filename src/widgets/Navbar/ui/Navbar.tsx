@@ -5,24 +5,26 @@ import { AppLink, AppLinkTheme, ThemeSwitcher } from '@/shared/ui';
 
 interface NavbarProps {
   className?: string;
+  headerClassName?: string;
 }
 
-export const Navbar: FC<NavbarProps> = ({ className }) => {
+export const Navbar: FC<NavbarProps> = ({ headerClassName, className }) => {
   return (
-    <nav className={clsx(classes.navbar, className)}>
-      <ThemeSwitcher />
-      <ul>
-        <li>
-          <AppLink theme={AppLinkTheme.SECONDARY} to="/">
-            Main
-          </AppLink>
-        </li>
-        <li>
-          <AppLink theme={AppLinkTheme.SECONDARY} to="/about">
-            About
-          </AppLink>
-        </li>
-      </ul>
-    </nav>
+    <header className={clsx(headerClassName)}>
+      <nav className={clsx(classes.navbar, className)}>
+        <ul>
+          <li>
+            <AppLink theme={AppLinkTheme.SECONDARY} to="/">
+              Main
+            </AppLink>
+          </li>
+          <li>
+            <AppLink theme={AppLinkTheme.SECONDARY} to="/about">
+              About
+            </AppLink>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 };
