@@ -31,5 +31,19 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     ],
   } satisfies RuleSetRule;
 
-  return [typescriptLoader, cssLoader];
+  const svgLoader = {
+    test: /\.svg$/i,
+    use: ['@svgr/webpack'],
+  } satisfies RuleSetRule;
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|webp|avif|ico|woff2?|eot|[to]tf|mp3|wav|flac|aac|ogg|webm|pdf|docx?|xlsx?|pptx?|zip|txt|md|xml|csv|json|ya?ml)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  } satisfies RuleSetRule;
+
+  return [typescriptLoader, cssLoader, svgLoader, fileLoader];
 };

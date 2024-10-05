@@ -1,19 +1,16 @@
 import clsx from 'clsx';
-import { FC } from 'react';
+import { type FC } from 'react';
 import classes from './Navbar.module.scss';
-import { useTheme } from '@/shared/config';
-import { AppLink, AppLinkTheme } from '@/shared/ui';
+import { AppLink, AppLinkTheme, ThemeSwitcher } from '@/shared/ui';
 
 interface NavbarProps {
   className?: string;
 }
 
 export const Navbar: FC<NavbarProps> = ({ className }) => {
-  const { toggleTheme } = useTheme();
-
   return (
     <nav className={clsx(classes.navbar, className)}>
-      <button onClick={toggleTheme}>Toggle theme</button>
+      <ThemeSwitcher />
       <ul>
         <li>
           <AppLink theme={AppLinkTheme.SECONDARY} to="/">

@@ -1,7 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
 import './styles/index.scss';
 import clsx from 'clsx';
-import { useTheme } from '@/shared/config';
+import { useTheme } from '@/shared/hooks';
 import { Navbar } from '@/widgets/Navbar';
 
 const App = () => {
