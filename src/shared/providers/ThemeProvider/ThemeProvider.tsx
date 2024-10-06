@@ -33,7 +33,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
         theme,
         toggleTheme,
         setTheme: setThemeCallback,
-      } satisfies IThemeContext),
+      }) satisfies IThemeContext,
     [theme]
   );
 

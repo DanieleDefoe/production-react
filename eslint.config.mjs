@@ -1,9 +1,13 @@
 import eslint from '@eslint/js';
-import globals from 'globals';
-import tsEslint from 'typescript-eslint';
+import prettierConfig from 'eslint-config-prettier';
+import i18next from 'eslint-plugin-i18next';
+import prettier from 'eslint-plugin-prettier';
+import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import react from 'eslint-plugin-react';
+import unusedImports from 'eslint-plugin-unused-imports';
+import globals from 'globals';
+import tsEslint from 'typescript-eslint';
 
 export default tsEslint.config(
   { ignores: ['/build'] },
@@ -12,12 +16,18 @@ export default tsEslint.config(
       eslint.configs.recommended,
       ...tsEslint.configs.strictTypeChecked,
       ...tsEslint.configs.stylisticTypeChecked,
+      i18next.configs['flat/recommended'],
+      prettierConfig,
     ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
       parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+        sourceType: 'module',
         project: './tsconfig.json',
         tsconfigRootDir: import.meta.dirname,
       },
@@ -30,11 +40,14 @@ export default tsEslint.config(
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      'unused-imports': unusedImports,
       react,
+      prettier,
     },
     rules: {
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
+      'prettier/prettier': 'warn',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
@@ -45,6 +58,7 @@ export default tsEslint.config(
         { extensions: ['.js', '.jsx', '.tsx'] },
       ],
       indent: [2, 2],
+      'i18next/no-literal-string': ['error', { markupOnly: true }],
       '@typescript-eslint/strict-boolean-expressions': 'warn',
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/consistent-type-assertions': 'off',
