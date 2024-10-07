@@ -1,6 +1,7 @@
-import { type RuleSetRule } from 'webpack';
+/* eslint-disable max-len */
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshTypeScript from 'react-refresh-typescript';
+import { type RuleSetRule } from 'webpack';
 import type { BuildOptions } from './types/config';
 
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
