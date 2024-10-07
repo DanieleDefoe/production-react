@@ -11,7 +11,7 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     use: {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env'],
+        presets: ['@babel/preset-env', '@babel/preset-typescript'],
       },
     },
   } satisfies RuleSetRule;

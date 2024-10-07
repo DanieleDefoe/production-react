@@ -1,10 +1,12 @@
 .button {
-  cursor: pointer;
   color: var(--primary-color);
+
+  cursor: pointer;
 }
 
 .clear {
-  background: none;
   border: none;
+
+  background: none;
   outline: none;
 }

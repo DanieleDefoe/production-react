@@ -1,15 +1,17 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: flex-end;
   width: 100%;
   height: var(--navbar-height);
+
   background-color: var(--inverted-bg-color);
   padding-inline: 20px;
 }
 
 .navbar ul {
   display: flex;
-  list-style: none;
   gap: 10px;
+
+  list-style: none;
 }

@@ -1,5 +1,6 @@
 {
   "test": "Тестовый пример",
   "lang": "Русский",
-  "toggle": "Toggle"
+  "toggle": "Toggle",
+  "not-found-page": "Страница не найдена"
 }

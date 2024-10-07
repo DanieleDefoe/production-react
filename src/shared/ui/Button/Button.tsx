@@ -1,5 +1,5 @@
-import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import clsx from 'clsx';
+import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import classes from './Button.module.scss';
 import { ButtonTheme } from './lib/types';
 

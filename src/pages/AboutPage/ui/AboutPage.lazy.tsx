@@ -1,10 +1,11 @@
+import { PageLoader } from '@/shared/ui';
 import { lazy, Suspense } from 'react';
 
 const AboutPageAsync = lazy(() => import('./AboutPage'));
 
 const AboutPageLazy = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<PageLoader />}>
       <AboutPageAsync />
     </Suspense>
   );
