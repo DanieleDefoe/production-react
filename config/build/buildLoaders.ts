@@ -61,11 +61,10 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|webp|avif|ico|woff2?|eot|[to]tf|mp3|wav|flac|aac|ogg|webm|pdf|docx?|xlsx?|pptx?|zip|txt|md|xml|csv|json|ya?ml)$/i,
-    use: [
-      {
-        loader: 'file-loader',
-      },
-    ],
+    type: 'asset/resource',
+    generator: {
+      filename: 'assets/[hash][ext][query]',
+    },
   } satisfies RuleSetRule;
 
   return [babelLoader, typescriptLoader, cssLoader, svgLoader, fileLoader];
