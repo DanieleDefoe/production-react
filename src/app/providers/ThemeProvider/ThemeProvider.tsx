@@ -1,17 +1,17 @@
 import {
-  type FC,
-  type PropsWithChildren,
-  useCallback,
-  useMemo,
-  useState,
-} from 'react';
-import {
   getInitialTheme,
   type IThemeContext,
   saveTheme,
   Theme,
   ThemeContext,
 } from '@/shared/config';
+import {
+  type FC,
+  type PropsWithChildren,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react';
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const [theme, setTheme] = useState(getInitialTheme);

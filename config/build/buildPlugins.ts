@@ -1,11 +1,11 @@
-import {
-  type WebpackPluginInstance,
-  ProgressPlugin,
-  DefinePlugin,
-} from 'webpack';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import {
+  type WebpackPluginInstance,
+  DefinePlugin,
+  ProgressPlugin,
+} from 'webpack';
 import type { BuildOptions } from './types/config';
 
 export const buildPlugins = ({
@@ -24,6 +24,6 @@ export const buildPlugins = ({
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    new ReactRefreshWebpackPlugin(),
+    new ReactRefreshWebpackPlugin({ overlay: false }),
   ];
 };

@@ -1,5 +1,5 @@
-import { BuildOptions } from './types/config';
 import type { Configuration } from 'webpack-dev-server';
+import { BuildOptions } from './types/config';
 
 export const buildDevServer = (options: BuildOptions): Configuration => {
   return {
@@ -7,5 +7,8 @@ export const buildDevServer = (options: BuildOptions): Configuration => {
     open: true,
     historyApiFallback: true,
     hot: true,
+    client: {
+      overlay: false,
+    },
   };
 };
