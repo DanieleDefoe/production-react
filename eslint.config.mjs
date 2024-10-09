@@ -10,7 +10,7 @@ import globals from 'globals';
 import tsEslint from 'typescript-eslint';
 
 export default tsEslint.config(
-  { ignores: ['/build'] },
+  { ignores: ['build'] },
   {
     extends: [
       eslint.configs.recommended,
@@ -27,6 +27,7 @@ export default tsEslint.config(
         ecmaFeatures: {
           jsx: true,
         },
+        ecmaVersion: 2020,
         sourceType: 'module',
         project: './tsconfig.json',
         tsconfigRootDir: import.meta.dirname,
@@ -68,6 +69,12 @@ export default tsEslint.config(
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-assignment': 'off',
       'max-len': ['error', { ignoreComments: true }],
+    },
+  },
+  {
+    files: ['__tests__/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off',
     },
   }
 );

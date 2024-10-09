@@ -1,6 +1,6 @@
 import path from 'path';
-import { buildWebpackConfig } from './config/build/buildWebpackConfig';
-import type { BuildEnv, BuildPaths } from './config/build/types/config';
+import { buildWebpackConfig } from './config/webpack/buildWebpackConfig';
+import type { BuildEnv, BuildPaths } from './config/webpack/types/config';
 
 const paths: BuildPaths = {
   entry: path.resolve(__dirname, 'src', 'index.tsx'),

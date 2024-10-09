@@ -27,8 +27,6 @@ export const buildPlugins = ({
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new ReactRefreshWebpackPlugin({ overlay: false }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: shouldAnalyze,
-    }),
-  ];
+    shouldAnalyze && new BundleAnalyzerPlugin(),
+  ].filter((plugin) => !!plugin);
 };
