@@ -10,15 +10,17 @@ const paths: BuildPaths = {
 };
 
 export default (env: BuildEnv) => {
-  const { port = 3000, mode = 'development' } = env;
+  const { port = 3000, mode = 'development', analyze = 'false' } = env;
 
   const isDev = mode === 'development';
+  const shouldAnalyze = analyze === 'true';
 
   const config = buildWebpackConfig({
     mode,
     paths,
     isDev,
     port,
+    shouldAnalyze,
   });
 
   return config;

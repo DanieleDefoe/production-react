@@ -6,11 +6,13 @@ import {
   DefinePlugin,
   ProgressPlugin,
 } from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import type { BuildOptions } from './types/config';
 
 export const buildPlugins = ({
   paths,
   isDev,
+  shouldAnalyze,
 }: BuildOptions): WebpackPluginInstance[] => {
   return [
     new HtmlWebpackPlugin({
@@ -25,5 +27,8 @@ export const buildPlugins = ({
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new ReactRefreshWebpackPlugin({ overlay: false }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: shouldAnalyze,
+    }),
   ];
 };

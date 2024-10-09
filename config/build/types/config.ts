@@ -14,9 +14,11 @@ export interface BuildOptions {
   paths: BuildPaths;
   isDev: boolean;
   port: number;
+  shouldAnalyze: boolean;
 }
 
 export interface BuildEnv {
   mode: BuildMode;
   port: number;
+  analyze: string;
 }
