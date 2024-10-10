@@ -5,6 +5,7 @@ import prettier from 'eslint-plugin-prettier';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import storybook from 'eslint-plugin-storybook';
 import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
 import tsEslint from 'typescript-eslint';
@@ -29,7 +30,7 @@ export default tsEslint.config(
         },
         ecmaVersion: 2020,
         sourceType: 'module',
-        project: './tsconfig.json',
+        project: ['./tsconfig.json', './.storybook/tsconfig.json'],
         tsconfigRootDir: import.meta.dirname,
       },
     },
@@ -44,6 +45,7 @@ export default tsEslint.config(
       'unused-imports': unusedImports,
       react,
       prettier,
+      storybook,
     },
     rules: {
       ...react.configs.recommended.rules,
@@ -68,11 +70,20 @@ export default tsEslint.config(
       '@typescript-eslint/no-unsafe-argument': 'off',
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-assignment': 'off',
-      'max-len': ['error', { ignoreComments: true }],
+      'max-len': [
+        'error',
+        {
+          ignoreComments: true,
+          code: 200,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+        },
+      ],
+      'react/no-unescaped-entities': 'warn',
     },
   },
   {
-    files: ['__tests__/**/*.test.{ts,tsx}'],
+    files: ['src/__tests__/**/*.test.{ts,tsx}', 'src/stories/**/*.{ts,tsx}'],
     rules: {
       'i18next/no-literal-string': 'off',
     },

@@ -13,8 +13,10 @@ import {
   useState,
 } from 'react';
 
-export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [theme, setTheme] = useState(getInitialTheme);
+export const ThemeProvider: FC<
+  PropsWithChildren & { initialTheme?: Theme }
+> = ({ children, initialTheme }) => {
+  const [theme, setTheme] = useState(initialTheme ?? getInitialTheme);
 
   const toggleTheme = useCallback(() => {
     const newTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;

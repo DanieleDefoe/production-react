@@ -15,5 +15,5 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["clsx", "testid"]
+  "cSpell.words": ["autodocs", "clsx", "svgr", "testid"]
 }

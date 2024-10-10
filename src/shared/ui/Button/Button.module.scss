@@ -10,3 +10,13 @@
   background: none;
   outline: none;
 }
+
+.outline {
+  padding: 10px 15px;
+
+  color: var(--primary-color);
+
+  background: none;
+
+  outline: 1px solid var(--primary-color);
+}

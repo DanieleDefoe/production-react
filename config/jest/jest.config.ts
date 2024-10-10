@@ -8,8 +8,8 @@ const config: Config = {
   moduleDirectories: ['node_modules', '<rootDir>/'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json'],
   rootDir: '../../',
-  testMatch: ['<rootDir>__tests__/**/*(*.)@(spec|test).[jt]s?(x)'],
-  modulePaths: ['<rootDir>__tests__'],
+  testMatch: ['<rootDir>src/__tests__/**/*(*.)@(spec|test).[jt]s?(x)'],
+  modulePaths: ['<rootDir>src/__tests__'],
   setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleNameMapper: {
     '@/(.*)': ['<rootDir>/src/$1'],
