@@ -1,1 +1,1 @@
-export { NotFoundPage } from './ui/NotFoundPage.lazy';
+export * from './ui/NotFoundPage.lazy';

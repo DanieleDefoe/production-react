@@ -1,7 +1,7 @@
-/* eslint-disable max-len */
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshTypeScript from 'react-refresh-typescript';
 import { type RuleSetRule } from 'webpack';
+import { buildCssLoader } from './loaders/buildCssLoader';
+import { buildSvgLoader } from './loaders/buildSvgLoader';
 import type { BuildOptions } from './types/config';
 
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
@@ -36,32 +36,9 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
     exclude: /node_modules/,
   } satisfies RuleSetRule;
 
-  const cssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [
-      options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      {
-        loader: 'css-loader',
-        options: {
-          importLoaders: 1,
-          modules: {
-            auto: (resPath: string) => resPath.includes('.module.'),
-            namedExport: false,
-            exportLocalsConvention: 'as-is',
-            localIdentName: options.isDev
-              ? '[path][name]__[local]--[hash:base64:5]'
-              : '[hash:base64:8]',
-          },
-        },
-      },
-      'sass-loader',
-    ],
-  } satisfies RuleSetRule;
+  const cssLoader = buildCssLoader(options.isDev);
 
-  const svgLoader = {
-    test: /\.svg$/i,
-    use: ['@svgr/webpack'],
-  } satisfies RuleSetRule;
+  const svgLoader = buildSvgLoader();
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|webp|avif|ico|woff2?|eot|[to]tf|mp3|wav|flac|aac|ogg|webm|pdf|docx?|xlsx?|pptx?|zip|txt|md|xml|csv|json|ya?ml)$/i,
