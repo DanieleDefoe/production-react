@@ -1,6 +1,7 @@
 {
   "name": "ulbi-course",
   "version": "1.0.0",
+  "type": "module",
   "description": "Advanced React Course",
   "scripts": {
     "start:dev": "webpack serve --env port=3000",
@@ -8,6 +9,7 @@
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "build:analyze": "webpack --env mode=production --env analyze=true",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml,html,css,scss,sass}\"",
     "lint:ts": "eslint .",
     "lint:ts:fix": "eslint . --fix",
     "lint:css": "pnpm stylelint \"**/*.scss\"",
@@ -16,6 +18,9 @@
     "test:ui": "pnpm loki test",
     "test:ui:ok": "pnpm loki approve",
     "test:ui:ci": "pnpx loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:report": "pnpm test:ui:json && pnpm test:ui:html",
+    "test:ui:json": "node ./scripts/generate-visual-json-report.js",
+    "test:ui:html": "pnpm reg-cli --from ./.loki/report.json --report .loki/report.html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -91,6 +96,7 @@
     "react-docgen-typescript-plugin": "^1.0.8",
     "react-refresh": "^0.14.2",
     "react-refresh-typescript": "^2.0.9",
+    "reg-cli": "^0.18.8",
     "sass": "^1.79.4",
     "sass-loader": "^16.0.2",
     "storybook": "^8.3.5",

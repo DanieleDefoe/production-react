@@ -1,22 +1,60 @@
 .button {
+  padding: 8px 15px;
+  border: none;
+
   color: var(--primary-color);
 
   cursor: pointer;
 }
 
 .clear {
-  border: none;
-
   background: none;
   outline: none;
 }
 
-.outline {
-  padding: 10px 15px;
+.background {
+  color: var(--primary-color);
 
+  background-color: var(--bg-color);
+}
+
+.background-inverted {
+  color: var(--inverted-primary-color);
+
+  background-color: var(--inverted-bg-color);
+}
+
+.outline {
   color: var(--primary-color);
 
   background: none;
 
   outline: 1px solid var(--primary-color);
+}
+
+.square.size-m {
+  min-width: var(--font-line-m);
+  min-height: var(--font-line-m);
+}
+
+.square.size-l {
+  min-width: var(--font-line-l);
+  min-height: var(--font-line-l);
+}
+
+.square.size-xl {
+  min-width: var(--font-line-xl);
+  min-height: var(--font-line-xl);
+}
+
+.size-m {
+  font: var(--font-m);
+}
+
+.size-l {
+  font: var(--font-l);
+}
+
+.size-xl {
+  font: var(--font-xl);
 }

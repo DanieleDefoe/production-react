@@ -29,18 +29,24 @@ jobs:
 
       - name: Bulld project for production
         run: pnpm build:prod
+        if: always()
 
       - name: Linting typescript
         run: pnpm lint:ts
+        if: always()
 
       - name: Linting styles
         run: pnpm lint:css
+        if: always()
 
       - name: Unit testings
         run: pnpm test:unit
+        if: always()
 
       - name: Build storybook
         run: pnpm storybook:build
+        if: always()
 
       - name: UI testing
         run: pnpm test:ui:ci
+        if: always()

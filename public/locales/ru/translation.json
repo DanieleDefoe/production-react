@@ -1,7 +1,7 @@
 {
   "test": "Тестовый пример",
   "lang": "Русский",
-  "toggle": "Toggle",
+  "short": "RU",
   "not-found-page": "Страница не найдена",
   "main": "Главная",
   "about": "О нас",

@@ -1,7 +1,7 @@
 {
   "test": "Test example",
   "lang": "English",
-  "toggle": "Toggle",
+  "short": "EN",
   "not-found-page": "Page not found",
   "main": "Main",
   "about": "About",
