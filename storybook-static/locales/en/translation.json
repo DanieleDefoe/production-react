@@ -1,0 +1,10 @@
+{
+  "test": "Test example",
+  "lang": "English",
+  "toggle": "Toggle",
+  "not-found-page": "Page not found",
+  "main": "Main",
+  "about": "About",
+  "unexpectedError": "An unexpected error occurred",
+  "reloadPage": "Reload the page"
+}
