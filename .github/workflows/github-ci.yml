@@ -1,0 +1,40 @@
+name: Lint, Test, Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        run: npm install -g pnpm@latest
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Bulld project for production
+        run: pnpm build:prod
+
+      - name: Linting typescript
+        run: pnpm lint:ts
+
+      - name: Linting styles
+        run: pnpm lint:css
+
+      - name: Unit testings
+        run: pnpm test:unit
