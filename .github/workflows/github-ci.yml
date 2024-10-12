@@ -38,3 +38,9 @@ jobs:
 
       - name: Unit testings
         run: pnpm test:unit
+
+      - name: Build storybook
+        run: pnpm storybook:build
+
+      - name: UI testing
+        run: pnpm test:ui:ci

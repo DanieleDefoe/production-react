@@ -11,7 +11,7 @@ import globals from 'globals';
 import tsEslint from 'typescript-eslint';
 
 export default tsEslint.config(
-  { ignores: ['build'] },
+  { ignores: ['build', 'storybook-static'] },
   {
     extends: [
       eslint.configs.recommended,

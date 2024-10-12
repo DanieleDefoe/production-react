@@ -1,6 +1,10 @@
 build
 dist
-node_modules
-.idea
 
+node_modules
+
+.idea
+.DS_Store
+
+storybook-static
 *storybook.log
