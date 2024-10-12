@@ -6,7 +6,7 @@ import type { BuildOptions } from './types/config';
 
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
   const babelLoader = {
-    test: /\.(js|jsx|tsx)?$/i,
+    test: /\.(js|jsx|ts|tsx)?$/i,
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',

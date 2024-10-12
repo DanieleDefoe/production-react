@@ -1,7 +1,6 @@
 {
   "name": "ulbi-course",
   "version": "1.0.0",
-  "type": "module",
   "description": "Advanced React Course",
   "scripts": {
     "start:dev": "webpack serve --env port=3000",
@@ -16,6 +15,7 @@
     "lint:css:fix": "pnpm stylelint \"**/*.scss\" --fix",
     "test:unit": "pnpm jest --config ./config/jest/jest.config.ts",
     "test:ui": "pnpm loki test",
+    "test:ui:up": "pnpm loki update",
     "test:ui:ok": "pnpm loki approve",
     "test:ui:ci": "pnpx loki --requireReference --reactUri file:./storybook-static",
     "test:ui:report": "pnpm test:ui:json && pnpm test:ui:html",
