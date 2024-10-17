@@ -83,7 +83,10 @@ export default tsEslint.config(
     },
   },
   {
-    files: ['src/__tests__/**/*.test.{ts,tsx}', 'src/stories/**/*.{ts,tsx}'],
+    files: [
+      'src/__tests__/**/*.test.{ts,tsx}',
+      'src/__stories__/**/*.{ts,tsx}',
+    ],
     rules: {
       'i18next/no-literal-string': 'off',
     },

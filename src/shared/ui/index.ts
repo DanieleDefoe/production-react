@@ -6,3 +6,5 @@ export { ButtonSize, ButtonTheme } from './Button/lib/types';
 
 export { Loader } from './Loader/Loader';
 export { PageLoader } from './PageLoader/PageLoader';
+
+export { Modal, ModalProps } from './Modal/Modal';

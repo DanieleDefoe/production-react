@@ -16,7 +16,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({ short }) => {
 
   return (
     <div>
-      <Button theme={ButtonTheme.CLEAR} onClick={onTranslate}>
+      <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onTranslate}>
         {t(short ? 'short' : 'lang')}
       </Button>
     </div>

@@ -1,7 +1,8 @@
-import { RoutePath } from '@/shared/config';
-import { AppLink } from '@/shared/ui';
+import { useModal } from '@/shared/hooks';
+import { Button, ButtonTheme, Modal } from '@/shared/ui';
 import clsx from 'clsx';
 import { type FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import classes from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -9,9 +10,18 @@ interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = ({ className }) => {
+  const { t } = useTranslation();
+  const { isOpen, onClose, onOpen } = useModal();
+
   return (
     <header className={clsx(classes.navbar, className)}>
-      <AppLink to={RoutePath.main}>/</AppLink>
+      <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onOpen}>
+        {t('login')}
+      </Button>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        {t('login')}
+      </Modal>
     </header>
   );
 };

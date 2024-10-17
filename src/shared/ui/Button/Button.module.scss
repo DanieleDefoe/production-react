@@ -7,9 +7,14 @@
   cursor: pointer;
 }
 
-.clear {
+.clear,
+.clear-inverted {
   background: none;
   outline: none;
+}
+
+.clear-inverted {
+  color: var(--inverted-primary-color);
 }
 
 .background {

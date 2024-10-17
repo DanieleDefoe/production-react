@@ -6,5 +6,6 @@
   "main": "Main",
   "about": "About",
   "unexpectedError": "An unexpected error occurred",
-  "reloadPage": "Reload the page"
+  "reloadPage": "Reload the page",
+  "login": "Log in"
 }
